@@ -1,9 +1,14 @@
+* 有两种实现方式：第一种是QT+OPENGL 第二种是GLFW+GLAD
+* 使用qt更偏向于实战开发
+
+先自己跟着文档实现+思考+记录问题 然后可以在看一遍视频，看看其他人的讲解
+
 # 准备步骤
-* 1.下载glfw,通过cmake构建编译
-* 2.将include和lib放到统一目录下
-* 3.通过glad在线服务 生成glad.c 和glad.h khrplatform.h  .c文件添加进项目 .h文件放在同一目录下
-* 4.新建vs项目，修改项目配置，添加依赖目录和依赖库
-* 5.添加代码 成功编译运行
+1. 下载glfw,通过cmake构建编译
+2. 将include和lib放到统一目录下
+3. 通过glad在线服务 生成glad.c 和glad.h khrplatform.h  .c文件添加进项目 .h文件放在同一目录下
+4. 新建vs项目，修改项目配置，添加依赖目录和依赖库
+5. 添加代码 成功编译运行
 
 
 
@@ -13,6 +18,8 @@
 
 # 文件
 * FirstOpenGL：用到了glfw初始化，opengl的输入处理，opengl窗口创建，glad初始化（管理opengl函数指针）,视口 ，渲染指令,回调函数。
-** 这里有个问题：viewPort视口大小和opengl窗口大小的关系 viewPort是用来干嘛的？
+	* 这里有个问题：viewPort视口大小和opengl窗口大小的关系 viewPort是用来干嘛的？
 
 # 资料
+文档 [LearnOpenGL](https://learnopengl-cn.github.io/01%20Getting%20started/04%20Hello%20Triangle/)
+视频 [QT+OPENGL](https://www.bilibili.com/video/BV1Qf421q7Dt?spm_id_from=333.788.videopod.episodes&vd_source=643846a492e97467f7a6183131a2b1c0&p=3)
