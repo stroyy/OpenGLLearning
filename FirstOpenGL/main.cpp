@@ -22,7 +22,7 @@ int main() {
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 	// 创建窗口对象
-	GLFWwindow* window = glfwCreateWindow(800, 600, "LearnOpenGL", NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(600, 600, "LearnOpenGL", NULL, NULL);
 	if (window == NULL) {
 		std::cout << "Failed to create GLFW window" << std::endl;
 		glfwTerminate();
@@ -36,17 +36,21 @@ int main() {
 		return -1;
 	}
 
-	// 渲染
-	//glViewport(0, 0, 600, 300); // 视口大小
+	
+	glViewport(0, 0, 300, 300); // 视口大小
 	// 添加回调 ：视口大小随着窗口大小改变而改变
 	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
-	// 渲染循环
+	
 	while (!glfwWindowShouldClose(window)) {
 		processInput(window);
+		// 渲染指令
+		glClearColor(0.2f, 0.2f, 0.3f, 1.f);
+		glClear(GL_COLOR_BUFFER_BIT);
 
-		glfwSwapBuffers(window);
+		// 调用事件，交换缓冲
 		glfwPollEvents();
+		glfwSwapBuffers(window);
 	}
 
 	// 清理并退出
